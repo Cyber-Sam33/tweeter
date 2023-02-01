@@ -14,27 +14,14 @@ $(document).ready(function() {
   // const textArea = document.querySelector('#tweet-text');
   const textArea = $('#tweet-text');
   console.log('JQ textarea', textArea);
-
-
-
-  //instaed of event listener
+  //instead of event listener we have on
   textArea.on('input', (event) => {
     const counter = $('.counter');
-
     const currentCountValue = 140 - event.target.value.length;
-
     counter.val(currentCountValue);
 
     // console.log('ETVL', event.target.value.length);
 
   });
-
-
-  // const counter = document.getElementsByClassName('counter');
-
-
-  // counter.addEventListener("click", () =>
-  //   // counter += 1);
-  // );
 });
 

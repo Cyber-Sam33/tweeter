@@ -4,6 +4,8 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <!-- --------------------------------------------CSS---------------------------------------------- -->
+
     <!-- External CSS -->
     <link
       rel="stylesheet"
@@ -22,21 +24,21 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/all-tweets.css" type="text/css" />
+
+    <!-----------------------------------JS--------------------------------------------------------- -->
+
+    <!-- External JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/client.js"></script>
     <script src="/scripts/composer-char-counter.js"></script>
   </head>
-
   <body>
     <!-- Top nav bar (fixed) -->
     <nav class="navbar">
@@ -104,8 +106,10 @@
             ><span class="rightside-tweet"
               ><div>
                 <span><i class="fa-regular fa-flag right-icons"></i></span
-                ><i class="fa-sharp fa-solid fa-heart right-icons"></i
                 ><span
+                  ><i class="fa-sharp fa-solid fa-heart right-icons"></i
+                ></span>
+                <span
                   ><i class="fa-solid fa-retweet right-icons"></i
                 ></span></div
             ></span>
