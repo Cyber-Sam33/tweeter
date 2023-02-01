@@ -5,25 +5,113 @@
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      type="text/css"
+    />
+    <!-- External CSS FONTS BUNGEE/source sans pro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/de54c1de20.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/all-tweets.css" type="text/css" />
+    <script src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
+    <nav class="navbar">
+      <span id="nav-items-left">TWEETER</span>
+      <ul class="nav-create-tweet">
+        <li class="nav-items-right"><strong>Write</strong> a new tweet</li>
+        <li class="nav-items-right arrow">
+          <i class="fa-solid fa-angles-down"></i>
+        </li>
+      </ul>
     </nav>
-
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <header id="top-header">
+      <div>
+        <img src="/images/profile-hex.png" />
+      </div>
+      <br />
+      <div>
+        <h2>Your Name</h2>
+      </div>
+    </header>
+    <main class="container">
+      <h1>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam,
+        recusandae?
+      </h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, alias
+        repudiandae itaque aperiam tempore officia magnam amet iure deserunt
+        asperiores!
+      </p>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita nulla
+        illum officiis laboriosam impedit dolorum eum debitis voluptates
+        reiciendis molestiae!
+      </p>
+      <section class="new-tweet">
+        <form method="post" action="/tweets">
+          <label class="message" for="tweet-text"
+            ><strong>What are you humming about?</strong>
+          </label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="div-counter">
+            <button class="btn" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">
+              <strong>140</strong></output
+            >
+          </div>
+        </form>
+      </section>
+      <section id="all-tweets">
+        <article class="tweet">
+          <header>
+            <span class="leftside-tweet">Sir Isacc Newton</span
+            ><span class="rightside-tweet">@sirisacc</span>
+          </header>
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+            ipsa est alias facilis ut voluptate illum maiores, ipsum repellendus
+            officia.
+          </div>
+          <footer>
+            <span class="leftside-tweet">10 days ago</span
+            ><span class="rightside-tweet"
+              ><div>
+                <span><i class="fa-regular fa-flag right-icons"></i></span
+                ><i class="fa-sharp fa-solid fa-heart right-icons"></i
+                ><span
+                  ><i class="fa-solid fa-retweet right-icons"></i
+                ></span></div
+            ></span>
+          </footer>
+        </article>
+      </section>
+    </main>
   </body>
 </html>

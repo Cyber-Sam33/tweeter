@@ -1,0 +1,32 @@
+.tweet {
+  border: solid black 2px;
+  padding-bottom: 40px;
+  /* display: flex; */
+}
+
+.leftside-tweet {
+  float: left;
+}
+
+.rightside-tweet {
+  float: right;
+}
+
+.right-icons {
+  color: blue;
+}
+
+.right-icons:hover {
+  color: gold;
+  cursor: pointer;
+}
+
+header {
+  padding-bottom: 40px;
+}
+
+footer {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-top: black solid 6px;
+}

@@ -1,0 +1,10 @@
+#top-header {
+  padding-top: 120px;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #08000a;
+  background-image: url("https://www.transparenttextures.com/patterns/argyle.png");
+}

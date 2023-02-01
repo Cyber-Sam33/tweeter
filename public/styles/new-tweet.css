@@ -1,0 +1,48 @@
+html {
+  padding-bottom: 10em;
+}
+
+.new-tweet form {
+  /* border: red solid 2px; */
+  display: flex;
+  flex-direction: column;
+
+  /* gap spces evenly children and grand-children of container */
+  gap: 10px;
+
+  padding-top: 10px;
+  /* border: solid black 1px; */
+}
+
+.div-counter {
+  display: flex;
+  justify-content: space-between;
+  /* padding-top: 10px; */
+}
+
+.message {
+  font-size: larger;
+  /* border: gold solid 2px; */
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+#tweet-text {
+  /* border: navy solid 2px; */
+  background-color: transparent;
+  border: none;
+  border-bottom: black solid 5px;
+}
+
+.counter {
+  /* border: green solid 4px; */
+  margin-right: 10px;
+}
+
+.btn {
+  font-family: "Bungee", cursive;
+  background-color: #4056a1;
+  color: #ffffff;
+  margin-left: 10px;
+  margin-bottom: 70px;
+}

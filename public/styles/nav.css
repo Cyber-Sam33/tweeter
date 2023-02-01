@@ -1,0 +1,41 @@
+.navbar {
+  height: 120px;
+  background-color: #4056a1;
+  color: #ffffff;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+
+  /* border: red solid 2px; */
+}
+
+#nav-items-left {
+  /* border: gold solid 2px; */
+  margin: 1.5em;
+  font-family: "Bungee", cursive;
+  font-size: 30px;
+
+  /* font-size:larger; */
+}
+
+.nav-items-right {
+  list-style-type: none;
+  margin-right: 1.5em;
+  text-transform: none;
+  /* border: gold solid 2px; */
+}
+
+.arrow {
+  text-align: center;
+}
+
+.fa-solid {
+  color: red;
+}
+
+.nav-create-tweet {
+  margin-top: 40px;
+}
