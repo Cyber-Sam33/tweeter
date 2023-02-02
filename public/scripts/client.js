@@ -5,6 +5,12 @@
  */
 
 $(document).ready(function() {
+
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
   // --- our code goes here ---
   // const data = [
   //   {
@@ -41,9 +47,9 @@ $(document).ready(function() {
       <span class="leftside-tweet">${tweetData.user.name}</span>
       <span class="rightside-tweet">${tweetData.user.handle}</span>
     </header>
-    <div>${tweetData.content.text}</div>
+    <div>${escape(tweetData.content.text)}</div>
     <footer>
-        <span class="leftside-tweet">${moment(new Date()).fromNow()}</span>
+        <span class="leftside-tweet">${moment(new Date(tweetData.created_at)).fromNow()}</span>
         <span class="rightside-tweet">
           <div>
             <span><i class="fa-regular fa-flag right-icons"></i></span>
@@ -65,18 +71,21 @@ $(document).ready(function() {
     }
   };
 
-  // renderTweets(data);
-
-
   $('#search').on('submit', function(event) {
+
     event.preventDefault();
     const tweet = $("#tweet-text").val();
     console.log(tweet);
     console.log($(this).serialize());
+    //if for empty or 140 characters exceeded
+    if (tweet === "" || tweet === null || tweet.length > 140) {
+
+      return $('#error-message').slideDown('slow');
+    }
 
     $.post("/tweets", $(this).serialize(), function(data) {
       console.log("tweet successfully posted!");
-
+      loadTweets();
     });
   });
 
@@ -85,6 +94,7 @@ $(document).ready(function() {
       url: 'http://localhost:8080/tweets',
       type: 'get',
       success: function(data) {
+        $('#all-tweets').empty();
         renderTweets(data);
       }
     });

@@ -2,6 +2,18 @@ html {
   padding-bottom: 10em;
 }
 
+#error-message {
+  border: 0.3em solid red;
+  color: red;
+  display: none;
+  padding: 0.6em;
+  text-align: center;
+}
+
+.tweet {
+  margin-bottom: 20px;
+}
+
 .new-tweet form {
   /* border: red solid 2px; */
   display: flex;

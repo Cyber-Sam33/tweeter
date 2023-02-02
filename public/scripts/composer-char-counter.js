@@ -19,7 +19,9 @@ $(document).ready(function() {
     const counter = $('.counter');
     const currentCountValue = 140 - event.target.value.length;
     counter.val(currentCountValue);
-
+    if (currentCountValue > 0 && currentCountValue < 140) {
+      $('#error-message').slideUp('slow');
+    }
     // console.log('ETVL', event.target.value.length);
 
   });
