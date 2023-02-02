@@ -6,35 +6,35 @@
 
 $(document).ready(function() {
   // --- our code goes here ---
+  // const data = [
+  //   {
+  //     "user": {
+  //       "name": "Newton",
+  //       "avatars": "https://i.imgur.com/73hZDYK.png"
+  //       ,
+  //       "handle": "@SirIsaac"
+  //     },
+  //     "content": {
+  //       "text": "If I have seen further it is by standing on the shoulders of giants"
+  //     },
+  //     "created_at": 1461116232227
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "Descartes",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@rd"
+  //     },
+  //     "content": {
+  //       "text": "Je pense , donc je suis"
+  //     },
+  //     "created_at": 1461113959088
+  //   }
+  // ];
 
-
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
-
-  function createTweetElement(tweetData) {
+  const createTweetElement = function(tweetData) {
+    console.log(moment(new Date()).fromNow());
+    // const timeAgo = new timeAgo('en-US');
     const item = `
     <article class="tweet">
     <header>
@@ -43,7 +43,7 @@ $(document).ready(function() {
     </header>
     <div>${tweetData.content.text}</div>
     <footer>
-        <span class="leftside-tweet">${tweetData.created_at}</span>
+        <span class="leftside-tweet">${moment(new Date()).fromNow()}</span>
         <span class="rightside-tweet">
           <div>
             <span><i class="fa-regular fa-flag right-icons"></i></span>
@@ -54,7 +54,7 @@ $(document).ready(function() {
       </footer>
     </article>`;
     return item;
-  }
+  };
 
   const renderTweets = function(tweetsArr) {
     // loops through tweets
@@ -65,30 +65,31 @@ $(document).ready(function() {
     }
   };
 
-  renderTweets(data);
+  // renderTweets(data);
 
 
-  // Test / driver code (temporary)
+  $('#search').on('submit', function(event) {
+    event.preventDefault();
+    const tweet = $("#tweet-text").val();
+    console.log(tweet);
+    console.log($(this).serialize());
 
-  // createTweetElement($tweet);
+    $.post("/tweets", $(this).serialize(), function(data) {
+      console.log("tweet successfully posted!");
 
-  // TWEET DATA below from the 'initial-tweets.json file in data - for testing purposes:
+    });
+  });
 
-  // const tweetDataOBject = {
-  //   "user": {
-  //     "name": "Newton",
-  //     "avatars": "https://i.imgur.com/73hZDYK.png",
-  //     "handle": "@SirIsaac"
-  //   },
-  //   "content": {
-  //     "text": "If I have seen further it is by standing on the shoulders of giants"
-  //   },
-  //   "created_at": 1675020595203
-  // };
+  const loadTweets = function() {
+    $.ajax({
+      url: 'http://localhost:8080/tweets',
+      type: 'get',
+      success: function(data) {
+        renderTweets(data);
+      }
+    });
+  };
 
-  // const $tweet = createTweetElement(tweetDataOBject);
-
-  // $('#all-tweets').append($tweet);
-
+  loadTweets();
 });
 
