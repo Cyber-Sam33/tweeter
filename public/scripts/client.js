@@ -11,32 +11,7 @@ $(document).ready(function() {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-  // --- our code goes here ---
-  // const data = [
-  //   {
-  //     "user": {
-  //       "name": "Newton",
-  //       "avatars": "https://i.imgur.com/73hZDYK.png"
-  //       ,
-  //       "handle": "@SirIsaac"
-  //     },
-  //     "content": {
-  //       "text": "If I have seen further it is by standing on the shoulders of giants"
-  //     },
-  //     "created_at": 1461116232227
-  //   },
-  //   {
-  //     "user": {
-  //       "name": "Descartes",
-  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
-  //       "handle": "@rd"
-  //     },
-  //     "content": {
-  //       "text": "Je pense , donc je suis"
-  //     },
-  //     "created_at": 1461113959088
-  //   }
-  // ];
+
 
   const createTweetElement = function(tweetData) {
     console.log(moment(new Date()).fromNow());
@@ -44,6 +19,7 @@ $(document).ready(function() {
     const item = `
     <article class="tweet">
     <header>
+      <img src="${tweetData.user.avatars}" class="leftside-tweet"></img>
       <span class="leftside-tweet">${tweetData.user.name}</span>
       <span class="rightside-tweet">${tweetData.user.handle}</span>
     </header>
@@ -86,6 +62,7 @@ $(document).ready(function() {
     $.post("/tweets", $(this).serialize(), function(data) {
       console.log("tweet successfully posted!");
       loadTweets();
+      $('#tweet-text').val('');
     });
   });
 

@@ -8,3 +8,7 @@
   background-color: #08000a;
   background-image: url("https://www.transparenttextures.com/patterns/argyle.png");
 }
+
+#top-header img {
+  padding-top: 85px;
+}
