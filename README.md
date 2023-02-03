@@ -21,3 +21,7 @@ Go to http://localhost:8080/ in your browser.
 - Chance
 
 ## Screenshots
+
+!["Screenshot of mobile-first-view"](https://github.com/Cyber-Sam33/tweeter/blob/master/docs/Mobile-first-view.png?raw=true)
+!["Screenshot of laptop-view"](https://github.com/Cyber-Sam33/tweeter/blob/master/docs/laptop-view.png?raw=true)
+!["Screenshot of tweet-box"](https://github.com/Cyber-Sam33/tweeter/blob/master/docs/tweet-box.png?raw=true)
