@@ -20,6 +20,11 @@ $(document).ready(function() {
     if (currentCountValue > 0 && currentCountValue < 140) {
       $('#error-message').slideUp('slow');
     }
+    if (currentCountValue < 0) {
+      counter.addClass('red-text');
+    } else {
+      counter.removeClass('red-text');
+    }
   });
 });
 

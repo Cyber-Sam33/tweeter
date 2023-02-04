@@ -51,7 +51,6 @@ $(document).ready(function() {
     const tweet = $("#tweet-text").val();
     //if for empty or 140 characters exceeded
     if (tweet === "" || tweet === null || tweet.length > 140) {
-
       return $('#error-message').slideDown('slow');
     }
 

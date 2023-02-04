@@ -17,9 +17,15 @@ html {
 .tweet header {
   margin: 0.3em;
 }
+/* 
+The Tweet boxes need a cursor :hover feature, with a dark backdrop, as to insinuate that the card 
+lifts off the page when the cursor moves over it */
+
+.tweet:hover {
+  box-shadow: 10px 10px 10px grey;
+}
 
 .new-tweet form {
-  /* border: red solid 2px; */
   display: flex;
   flex-direction: column;
 
@@ -27,32 +33,31 @@ html {
   gap: 10px;
 
   padding-top: 10px;
-  /* border: solid black 1px; */
 }
 
 .div-counter {
   display: flex;
   justify-content: space-between;
-  /* padding-top: 10px; */
 }
 
 .message {
   font-size: larger;
-  /* border: gold solid 2px; */
   margin-top: 20px;
   margin-left: 10px;
 }
 
 #tweet-text {
-  /* border: navy solid 2px; */
   background-color: transparent;
   border: none;
   border-bottom: black solid 5px;
 }
 
 .counter {
-  /* border: green solid 4px; */
   margin-right: 10px;
+}
+
+.red-text {
+  color: red;
 }
 
 .btn {
@@ -61,4 +66,5 @@ html {
   color: #ffffff;
   margin-left: 10px;
   margin-bottom: 70px;
+  cursor: pointer;
 }
