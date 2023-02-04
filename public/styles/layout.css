@@ -13,7 +13,7 @@ html {
 }
 
 /*
- * Global layout stuff
+ * Global layout 
  */
 
 body {
@@ -23,13 +23,8 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
 main {
   width: 90%;
-  /* border: red solid 2px; */
   margin-left: auto;
   margin-right: auto;
 }

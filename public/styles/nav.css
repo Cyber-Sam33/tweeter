@@ -8,12 +8,9 @@
   align-items: center;
   position: fixed;
   width: 100%;
-
-  /* border: red solid 2px; */
 }
 
 #nav-items-left {
-  /* border: gold solid 2px; */
   margin: 1.5em;
   font-family: "Bungee", cursive;
   font-size: 30px;
@@ -25,7 +22,6 @@
   list-style-type: none;
   margin-right: 1.5em;
   text-transform: none;
-  /* border: gold solid 2px; */
 }
 
 .arrow {

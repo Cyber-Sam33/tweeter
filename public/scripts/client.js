@@ -14,8 +14,6 @@ $(document).ready(function() {
 
 
   const createTweetElement = function(tweetData) {
-    console.log(moment(new Date()).fromNow());
-    // const timeAgo = new timeAgo('en-US');
     const item = `
     <article class="tweet">
     <header>
@@ -43,7 +41,7 @@ $(document).ready(function() {
     for (let tweetObj of tweetsArr) {
       // calls createTweetElement for each tweet
       // takes return value and appends it to the tweets container
-      $('#all-tweets').append(createTweetElement(tweetObj));
+      $('#all-tweets').prepend(createTweetElement(tweetObj));
     }
   };
 
@@ -51,8 +49,6 @@ $(document).ready(function() {
 
     event.preventDefault();
     const tweet = $("#tweet-text").val();
-    console.log(tweet);
-    console.log($(this).serialize());
     //if for empty or 140 characters exceeded
     if (tweet === "" || tweet === null || tweet.length > 140) {
 
@@ -60,9 +56,10 @@ $(document).ready(function() {
     }
 
     $.post("/tweets", $(this).serialize(), function(data) {
-      console.log("tweet successfully posted!");
       loadTweets();
       $('#tweet-text').val('');
+    }).fail(function(xhr, status, error) {
+      alert("There is an error. Please try again");
     });
   });
 
@@ -73,6 +70,9 @@ $(document).ready(function() {
       success: function(data) {
         $('#all-tweets').empty();
         renderTweets(data);
+      },
+      error: function(XMLHttpRequest, textStatus, errorThrown) {
+        alert("There is an error. Please try again");
       }
     });
   };
