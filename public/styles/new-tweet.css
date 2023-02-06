@@ -50,6 +50,7 @@ lifts off the page when the cursor moves over it */
   background-color: transparent;
   border: none;
   border-bottom: black solid 5px;
+  cursor: pointer;
 }
 
 .counter {

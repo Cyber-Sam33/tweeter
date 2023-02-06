@@ -5,6 +5,7 @@
 
 .leftside-tweet {
   float: left;
+  padding-left: 0.7rem;
 }
 
 .rightside-tweet {

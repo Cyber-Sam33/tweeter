@@ -25,4 +25,9 @@
   .right-icons {
     margin-right: 0.3em;
   }
+
+  .navbar {
+    background-color: #4056a1;
+    background-image: none;
+  }
 }
